@@ -1,16 +1,1 @@
 \section{Data imputation}\label{data_prep}
-\subsection{Description des données}
-Le jeu de données all_data_original_copie comporte 21083 patients et 16 attributs. Les attributs sont entre autres les données nominatives des patients, les signes et les symptômes constatés par le médecin, le traitement proposé, le diagnostic  final du médecin, les résultats du TDR (Test de Diagnostic Rapide)  et le statut (hospitalisation, décès ou mis en observation) du patient.
-Insérer tableau ici
-On remarque que les attributs tels que signeSymptome et  Diagnostic sont multivariés. Ainsi nous devrons les splitter pour récupérer les informations qui sont pertinentes pour notre étude à savoir prédire si un patient présentant un certain nombre de signes et symptômes est atteint de paludisme ou non
-\subsection{Sélection  des signes et symptômes   du paludisme}
-Toutes les informations contenues dans la colonne signeSymptome ne sont pas utiles pour diagnostiquer un  paludisme. Ainsi pour notre étude nous avons extrait 12 nouveaux attributs qui sont les signes et les symptômes du paludisme. Ces attributs sont les suivants : manque d'appétit, fatigue, arthralgie, trouble digestif, vertiges, frisson, myalgie, diarrhée et  douleur abdominale.
-Le Diagnostic est le résultat des signes et symptômes confirmé par un examen médical en général. 
-Dans la colonne Diagnostic, on voit plusieurs conclusions différentes. Ainsi tout diagnostic autre que le paludisme est remplacé par la classe non paludisme. Ainsi la colonne Diagnostic reste multivariée avec les catégories suivantes: accès palustre, paludisme, simple paludisme, paludisme grave, accès paludisme grave, accès paludisme simple, syndrome palustre, paludisme suspect et pas de paludisme ( se sont tous les diagnostics différents du paludisme).
-Insérer tableau ici
-\subsection{Imputation des données manquantes}
-La plus part des attributs de notre jeu de données présente des valeurs manquantes. Ces valeurs manquantes peuvent avoir un impact négatif sur notre analyse future. Pour remplacer ces dernières, nous avons utilisé le package missForest du logiciel R.
-Pour cela les attributs textuels comme les signes et symptômes ou les classes de l’attribut Diagnostic 
-ont été remplacés par des valeurs numériques.
- Avec un  NRMSE de 0,01  nous pouvons dire que l’imputation a réussi mais aussi n’a pas altéré 
- la structure des données.
