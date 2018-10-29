@@ -23,8 +23,8 @@ the help of international organizations have tried to eradicate Malaria by imple
 to fill the gap in terms of services and human resources. However, the mortality rate is still very high, e.g. in underserved areas
 or areas without required healthcare needs. Most of these death cases are reported to be caused by inaccurate diagnosis, sometimes 
 incomplete leading to a bad prediction of the exact type of Malaria.
-On the other hand, Malaria occurence or complication can often occur  during  big events (for instance religious events)
-which group thousands of persons from everywhere in the country. During those big events, non-permanent medical points are set in order
+On the other hand, Malaria occurence or complication can often occur  during  popular events (for instance religious events)
+which group thousands of persons from everywhere in the country. During those popular events, non-permanent medical points are set in order
 to assist and treat ill persons; the staff in a given health point can consist sometimes of only volunteers with no medical skills. Every medical 
 point can have to receive hundreds of patients each day with some of them potentially suffering from Malaria. 
 This appeals for the need of finding automated tools to help medical actors in their decision making process, and thereby to improve provided 
@@ -35,7 +35,9 @@ In this paper we present first steps towards an efficient manner to automaticall
 and the outcome from the quick diagnosis test. We define our diagnosis task as a classical binary classification problem by considering two classes: \textquote{Malaria} and \textquote{Not Malaria}.
 Given a patient data, our main goal is to properly find to which class the patient belongs. To solve the classification problem we rely onn machine learning  and use the logistic regression
 function as the basis of our prediction approach. Machine learning has been used in several domains (e.g. health area) for classification purposes whereas logistic regression has demonstrated its efficiency when the number of features is high. 
- First expermients on a real world 
+ 
+As an application scenario, we focus on predicting Malaria cases in Senegal. At this end, we use  a large volume of patient record dataset collected during the most popular religious event in Senegal from the different installed health points, namely more than twenty points that deadly receive hundreds of patients. 
+First expermients on a real world 
 patient dataset show promising performance results regarding the effectiveness of the proposed approach.
 
 \paragraph*{Paper organization.}The remaining of the paper is organized as follows. We summarize the related work on data imputation and binary classification methods in Section \ref{related_work}.
