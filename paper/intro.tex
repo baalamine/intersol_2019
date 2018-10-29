@@ -36,10 +36,18 @@ and the outcome from the quick diagnosis test. We define our diagnosis task as a
 Given a patient data, our main goal is to properly find to which class the patient belongs. To solve the classification problem we rely onn machine learning  and use the logistic regression
 function as the basis of our prediction approach. Machine learning has been used in several domains (e.g. health area) for classification purposes whereas logistic regression has demonstrated its efficiency when the number of features is high. 
  
-As an application scenario, we focus on predicting Malaria cases in Senegal. At this end, we use  a large volume of patient record dataset collected during the most popular religious event in Senegal from the different installed health points, namely more than twenty points that deadly receive hundreds of patients. 
-First expermients on a real world 
-patient dataset show promising performance results regarding the effectiveness of the proposed approach.
+As an application scenario, we focus on predicting Malaria cases in Senegal. At this end, we use  a large volume of patient record dataset collected during the most popular religious event in Senegal from the different installed health points, namely more than twenty points that deadly receive hundreds of patients.
+As an immediate result of this work, we introduce a data preparation pipeline in order to 
+\begin{inparaenum}[(i)]
+\item explore the dataset for profiling purpose;
+\item only retain records related to Malaria;
+\item clean and transform attributes, as well data values, in the obtained dataset; and 
+\item impute missing values (there were lot of missing values in the collected health dataset).
+\end{inparaenum}
+Such a data preparation pipeline has been realized using OpenRefine for the various pre-treatment tasks and missForest for missing data imputation; see Section\ref{data_prep} for more details. 
+Expermients on the real world patient dataset, augmenting with a semi-synthetic dataset, show promising performance results regarding the effectiveness of the proposed approach.
 
 \paragraph*{Paper organization.}The remaining of the paper is organized as follows. We summarize the related work on data imputation and binary classification methods in Section \ref{related_work}.
-In Section \ref{data_prep} we introduce the data profiling and imputation techniques used on patient records. We then present our prediction model for Malaria cases in Section \ref{prediction_model}.
-Experimentation on real-world datasets are detailled in Section \ref{experimentation} before we conclude in Section \ref{conclusion}. 
+In Section \ref{data_prep} we introduce a data preparation pipeline on the raw collected patient records for the prediction phase. 
+We then present our prediction model for Malaria cases in Section \ref{prediction_model}.
+Experiments and performance analysis  on the collected real-world dataset, as well as a semi-synthetic dataset,  are detailled in Section \ref{experimentation} before we conclude in Section \ref{conclusion}. 
