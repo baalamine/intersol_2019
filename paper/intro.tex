@@ -6,12 +6,12 @@ from  Malaria may present symptoms that typically include fever, tiredness, vomi
 the disease can cause yellow skin, seizures, coma or death.
 
 \paragraph*{Studied problem and motivations.}
-According to the last report about the propagation of Malaria disease around the world, published in November 2017, 216 millions of cases have been 
-reported in 2016. As a result, the number of cases has significantly increased when compared to the 211 millions of reported Malaria patients in 2016.
+According to the last report about the propagation of Malaria disease around the world, published in November 2017 by the World international Health Organization (WHO in short),
+ 216 millions of cases have been reported in 2016. As a result, the number of cases has significantly increased when compared to the 211 millions of reported Malaria patients in 2016.
 As for the number of death due to Malaria, it does not decrease between 2016 and 2017 (446.000 vs. 445.000) despite the huge effort made by governements
 and non-governmental organization to improve healthcare services and the awareness strategies, especially in critical areas. 
 When analyzing the statistics above in details, one can easily notice that the burden of the Africa region of the World 
-international Health Organization (WHO in short) is colossal. Indeed, 90\% of Malaria cases and 90\% of deaths due to the disease were located in this area in 2016.
+international Health Organization is colossal. Indeed, 90\% of Malaria cases and 90\% of deaths due to the disease were located in this area in 2016.
 More specifically, 80\% of the burden in terms of morbidity is distributed in fifteen countries, all located in Sub-saharan Africa except India. This demonstrates
 that Malaria is a real flail in Sub-saharan Africa states and Senegal is not spared at all. We investigate in this study an efficient approach to predict, using machine learning, the occurence 
 or not of Malaria when a patient has to be diagnosed. Given the patient signs and symptoms, as well as the result from the quick diagnosis test, our solution should be to 
@@ -32,7 +32,7 @@ healthcare services.
 
 \paragraph*{Proposed diagnosis approach.}
 In this paper we present first steps towards an efficient manner to automatically diagnosis Malaria occurence or not based on patient signs and symptoms,
-and the outcome from the quick diagnosis test. We define our diagnosis task as a classical binary classification problem by considering two classes: \textquote{Malaria} and \textquote{Not Malaria}.
+and the outcome from the quick diagnosis test. We define our diagnosis task as a classical binary classification problem by considering two classes: \textquote{Malaria} and \textquote{not-Malaria}.
 Given a patient data, our main goal is to properly find to which class the patient belongs. To solve the classification problem we rely onn machine learning  and use the logistic regression
 function as the basis of our prediction approach. Machine learning has been largely used in several domains (e.g. Health Informatics  \cite{Du13}) for various purposes whereas logistic regression has demonstrated its efficiency when dealing with a binary classification problem. 
  
@@ -44,7 +44,7 @@ As an immediate result of this work, we introduce a data preparation pipeline in
 \item clean and transform attributes, as well data values, in the obtained dataset; and 
 \item impute missing values (there were lot of missing values in the collected health dataset).
 \end{inparaenum}
-Such a data preparation pipeline has been realized using OpenRefine for the various pre-treatment tasks and missForest for missing data imputation; see Section\ref{data_prep} for more details. 
+Such a data preparation pipeline has been realized using \emph{OpenRefine} (formely Google Refine) to perform various cleaning and profiling tasks on our raw atient dataset and \emph{missForest}, a robustalgorithm for imputing  missing data of diverses types; see Section\ref{data_prep} for more details. 
 Expermients on the real world patient dataset, augmenting with a semi-synthetic dataset, show promising performance results regarding the effectiveness of the proposed approach.
 
 \paragraph*{Paper organization.}The remaining of the paper is organized as follows. We summarize the related work on data imputation and binary classification methods in Section \ref{related_work}.
