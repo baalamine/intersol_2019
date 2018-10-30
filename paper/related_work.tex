@@ -18,8 +18,11 @@ of Malaria and its severity level as well: the neural network analyzes the featu
 Still using ML, DIAZ et al. have proposed in \cite{Dia09} a semi-supervised algorithm enable to quantify and classify the 
 erythrocytes infected by Malaria parasistes through microscopic images. The orginiality of this work comes from its usability
 even at the presence of thin blood drandruff infected by falciparum Plasmodium for the quantification and the classificationi tasks.
-Besides blood data, sign and symptom records were also used to study Malaria with ML methods. Indeed, tree decision-based approach
-has been proposed in Nigeria \cite{Ug10} to predict the occurrence of Malaria given diagnostic data. 
+Besides blood data, sign and symptom records were also used to study Malaria with ML methods. Indeed, decision trees based approach
+has been proposed in Nigeria \cite{Ug10} to predict the occurrence of Malaria given diagnostic data. However a decision tree suffers 
+from various limitations as a classifier. Indeed it can easily overfit or can be extremely sensitive to small pertubations in data for instance.
+Even though we both rely on signs and symptoms, the prediction model in \cite{Ug10} differs from ours in numerous facets: our model is built upon
+logistic regression and is trained using also inputs from the quick diagnosis test. In addition, we apply our method in the context of patients living in Senegal. 
 
 % Other ML works in HI
 \paragraph*{Other ML works in HI.}
