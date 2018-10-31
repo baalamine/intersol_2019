@@ -62,11 +62,16 @@ As a last step, we have completed our dataset by using a robust data imputation 
 \subsection{Missing Data Imputation}
 As shown in Table \ref{table-missing}, we observed many missing values in our dataset, affecting the majority of the data attributes. Such missing values
 should not be ignored as data completeness and quality are very important when dealing with a prediction problem; this could negatively impact the accuracy
-of our prediction and should be treat properly. The sources and types of missing values can be various \cite{Al18}. In our context, missingness is \emph{not
+of our prediction and should be treat appropriately. One has to note that machine learning relies on complete dataset.
+The sources and types of missing values can be various \cite{Al18}. In our context, missingness is \emph{not
 completely random} and can be due to an incomplete knowledge of the patient data, the fact that the medical staff do not specify a attribute value when it is
 not observed, or a difficulty for the patients to properly describe some piece of information (e.g. related to the signs or symptoms of their diseases) at the
 diagnostic time. Since they might have a certain relationship between attribute values for the same patient, or even a correlation between patient records, we 
 decide to solve our problem of missing values by using imputation algorithms instead of choosing arbitrary values or removing records with missing values.  
+
+Data imputation is often used in the machine learning field when dealing with missing information. Many algorithms have been proposed in the literature \cite{Si14,Al18},
+depending on the nature of the missingness or the type of data. MissForest \cite{Ste12} has been proved to be efficient at the presence of various types (e.g. numerical data,
+string, categorical data, ect.) of data simultaneously as in our case.
 
 % table of the number of missing values per attribute
 \begin{table}[!ht]
