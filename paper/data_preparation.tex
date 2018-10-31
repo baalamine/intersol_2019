@@ -12,10 +12,16 @@ suffering from Malaria.
 
 In detail, the dataset consists of thousands of patient records having each 16 attributes. Some of these
 attributes (also knwon as features) comprise personal data about the patient, but also patient signs and symptoms
-reported by the doctor who took in charge the patient. The other attributes describe information about the final diagnosis
+reported by the doctor who took in charge the patient. The other attributes describe clinical data such as information about the final diagnosis
 of the doctor (the disease that the patient suffers from), the income of the quick diagnosis test, and the status (i.e. admission, 
-dead or put under observation) of the patient. For privacy concerns and some restrictions, we have disregarded personal data about
-the patient in this work. 
+dead or put under observation) of the patient. For privacy concerns and some restrictions in data use, we have disregarded personal data about
+the patient during this work. Due to the fact the patient records have been collected manually in registers, we have noticed in the dataset issues
+such as misspellings, same attribute values with different writings (e.g., \textquote{DIARRHEE INFECTIEUSE} and \textquote{INFECTIEUSE DIARRHE}),
+ and multi-valued attributes. We use OpenRefine \cite{Ku16,openRefine} to first clean and then normalize values in the patient dataset.
+
+OpenRefine (formerly called Google Refine) is a powerful open source tool that allows researchers or scientists to accomplish the data wrangling activity, i.e. 
+working with messy data: cleaning it; transforming it from one format into another; and extending it with Web services and external data.    
+
 
 % Extraction of Malaria features
 \subsection{Extraction of Malaria features}
