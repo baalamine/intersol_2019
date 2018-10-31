@@ -72,11 +72,13 @@ decide to solve our problem of missing values by using imputation algorithms ins
 Data imputation is often used in the machine learning field when dealing with missing information. Many algorithms have been proposed in the literature \cite{Si14,Al18},
 depending on the nature of the missingness or the type of data. MissForest \cite{Ste12} has been proved to be efficient at the presence of various types (e.g. numerical data,
 string, categorical data, ect.) of data simultaneously as in our case.
-
-MissForest relies on Random Forest, a non-parametric prediction method that is able to to deal with mixed-type data and allows for intreactive and non-linear regression effects.
-Such a imputation algorithm aims at handling any type of input dataset by minimizing (when possible) assumption about the structural apsects of the data. Technically missForest
+The algorithm missForest relies on Random Forest, a non-parametric prediction method that is able to to deal with mixed-type data and allows for intreactive and non-linear regression effects.
+Such a imputation algorithm aims at handling any type of input dataset by minimizing (when possible) assumption about the structural apsects of the data. Given an input dataset, missForest
 solves the missing data problem using an iterative imputation scheme by training a Random Forest on observed values in a first step, followed by predicting the missing values 
-and then proceeding iteratively. 
+and then proceeding iteratively until convergence. 
+
+We have applied missForest on our Malaria patient dataset by using its open-source Python implementation \cite{MF_python}. We shall study and prove in Section \ref{experimentation} the accuracy of
+the prediction made by the algorithm with the hep of the normalized root mean squared error metric.  
 
 % table of the number of missing values per attribute
 \begin{table}[!ht]
