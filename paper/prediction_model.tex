@@ -9,8 +9,22 @@ classification problem we have to solve in the study.
 % binary classification problem for Malaria
 \subsection{Binary classification problem}
 Let us assume two given classes of Malaria diagnostic: \emph{Malaria} and \emph{Not-Malaria}.
+We also consider \textsc{P} and \textsc{C} as respectively the set of patients and our binary classifier.
+A patient \emph{p} in \textsc{P} is defined by a set of pairs $(a_1, v_1), (a_2, v_2), \ldots, (a_n, v_n)$
+where $a_i$ and $v_i$, for each $1\leq i\leq n$, respectively corresponds to a given Malaria feature and its associated value defined
+as follows.
+\begin{equation}
+v_i = \left\{
+\begin{array}{rl}
+1& \text{if $a_i$ is observed} \\
+0& \text{otherwise} \\
+\end{array}
+\right.
+\end{equation}
 
-\begin{definition}{Binary classification problem}
+\begin{definition}{(Binary classification problem)}
+We define our binary classification problem for the prediction of the occurrence or not of Malaria on a given patient dataset as a 
+mapping \textsc{C} of every patient p in \textsc{P} into \{\emph{Malaria}, \emph{Not-Malaria}\}. Formally, we have \textsc{C}: \textsc{P} $\mapsto$ \{\emph{Malaria}, \emph{Not-Malaria}\}.
 \end{definition}
 % Logistic regession function
 \subsection{Logistic regression function}
