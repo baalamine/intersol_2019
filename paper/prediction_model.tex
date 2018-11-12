@@ -71,4 +71,24 @@ In such a context, the variable to explain is often the occurrence or not of an 
 variables, i.e. the features, are those that highly impact the occurrence of this event, i.e. variables assessing the exposure to a 
 risk factor or a protective factor, or a variable representing the confusion factor.
 The main interest of using logistic regression is its ability to quantify the strength of the relationship between each explicative 
-variable and the variable to explain, given the other variables integrated to the model \cite{Am02}.   
+variable and the variable to explain, given the other variables integrated to the model \cite{Am02}. 
+
+% formal definition of the logistic model
+\subsubsection{Formal definition  of our regression  model.}
+Let us assume that \textsc{Y} represents the variable we are trying to explain in this study, i.e. the variable which models the occurrence or not of Malaria and whose 
+two classes \emph{Malaria} and \emph{Not-Malaria} are respectively denoted by \textsc{M+} and \textsc{M-}. 
+
+In the special case of only one explicative variable \emph{a} (which case corresponds to a simple regression), formally
+the model is written as follows.
+
+\begin{equation}
+\textsc{Pr}(\textsc{M+} ~|~ \emph{a}) = \frac{e^{\alpha + \beta\times \emph{a} }}{1 + e^{\alpha + \beta\times \emph{a} }}
+\end{equation}
+
+\textsc{Pr}(\textsc{M+} ~$|$~ \emph{a}) measures the probability of the occurrence of Malaria if the variable \emph{a} is observed.
+Figure \ref{sigmoid_curve} represents the corresponding logistic function \emph{f(a)}. Recall that the main interest of this function
+lies in the simplicity of reaching an estimation of an odds ratio (OR) which measures the strength of the association between the 
+disease \textsc{M} and an exposure variable.
+
+% Selection of the final model
+\subsubsection{Selection of the final model.}  
