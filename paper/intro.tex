@@ -5,7 +5,7 @@ disease which is transmitted to human being through bites from infected female A
 from  Malaria may present symptoms that typically include fever, tiredness, vomiting, and headaches. In its severe form,
 the disease can cause yellow skin, seizures, coma or death.
 
-\paragraph*{Studied problem and motivations.}
+\subsubsection{Studied problem and motivations.}
 According to the last report \cite{Wh17}  about the propagation of Malaria disease around the world, published in November 2017 by the World international Health Organization (WHO in short),
  216 millions of cases have been reported in 2016. As a result, the number of cases has significantly increased when compared to the 211 millions of reported Malaria patients in 2016.
 As for the number of death due to Malaria, it does not decrease between 2016 and 2017 (446.000 vs. 445.000) despite the huge effort made by governements
@@ -30,7 +30,7 @@ points might receive and treat hundreds of patients each day with some of them p
 This appeals for the need of finding automated tools to help medical actors in their decision making process, and thereby to improve provided 
 healthcare services.   
 
-\paragraph*{Proposed diagnosis approach.}
+\subsubsection{Proposed diagnosis approach.}
 In this paper we present first steps towards an efficient manner to automatically diagnosis Malaria occurence or not based on patient signs and symptoms,
 and the outcome from the quick diagnosis test. We define our diagnosis task as a classical binary classification problem by considering two classes: \textquote{Malaria} and \textquote{not-Malaria}.
 Given a patient data, our main goal is to properly find to which class the patient belongs. To solve this classification problem we rely on machine learning and use the logistic regression
@@ -48,7 +48,7 @@ Such a data preparation pipeline has been realized using \emph{OpenRefine} (form
  algorithm for imputing  missing data of diverses types; see Section\ref{data_prep} for more details. 
 Expermients on the real world patient dataset, augmenting with a semi-synthetic dataset, show promising performance results regarding the effectiveness of the proposed approach.
 
-\paragraph*{Paper organization.}The remaining of the paper is organized as follows. We summarize the related work on data imputation and binary classification methods in Section \ref{related_work}.
+\subsubsection{Paper organization.}The remaining of the paper is organized as follows. We summarize the related work on data imputation and binary classification methods in Section \ref{related_work}.
 In Section \ref{data_prep} we introduce a data preparation pipeline on the raw collected patient records for the prediction phase. 
 We then present our prediction model for Malaria cases in Section \ref{prediction_model}.
 Experiments and performance analysis  on the collected real-world dataset, as well as a semi-synthetic dataset,  are detailled in Section \ref{experimentation} before we conclude in Section \ref{conclusion}. 
