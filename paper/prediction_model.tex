@@ -32,8 +32,8 @@ to one and only one class in \{Malaria, Not-Malaria\}. Formally, we present such
 We define and use  \textsc{C} with the help of the logistic regression for the specific purpose of our study. 
 % Logistic regession function
 \subsection{Logistic regression}
-The logistic regression (a.k.a the logit function) is a statistical model used in the machine learning domain for binary classification.
-In its basic form, it is based on a logistic function to model a binary dependent variable \cite{Sa14}.
+The logistic regression (a.k.a the logit function) is a statistical model used in the machine learning domain for binary classification \cite{Ch14}.
+In its basic form, it is based on a logistic function to model a binary dependent variable \cite{Ho00,Sa14}.
 As an input, the logistic regression  takes qualitative or/and ordinal predictive variables (e.g. the presence
 or not of fever given a patient) in order to measure the probability of the outcome (e.g. the occurrence or not of the Malaria) 
 by using the \emph{Sigmoid function}. Figure \ref{sigmoid_curve} shows the shape of the curve of the Sigmoid function. 
@@ -64,3 +64,8 @@ by using the \emph{Sigmoid function}. Figure \ref{sigmoid_curve} shows the shape
 \end{tikzpicture}
 \caption{The curve of the Sigmoid function}\label{sigmoid_curve}
 \end{figure}
+
+The logistic regression is one of the most used multi-valued models in epidemiology \cite{Am02,Pr05} (i.e. the study of the incidence,
+ distribution, and possible control of diseases and other factors relating to health issues that can affect groups of population).
+In such a context, the variable to explain is often the occurrence or not of an event like a disease and the explanatory 
+variables, i.e. the features, are those that highly impact the occurrence of this event.  
