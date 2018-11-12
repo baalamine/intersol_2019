@@ -83,12 +83,24 @@ the model is written as follows.
 
 \begin{equation}
 \textsc{Pr}(\textsc{M+} ~|~ \emph{a}) = \frac{e^{\alpha + \beta\times \emph{a} }}{1 + e^{\alpha + \beta\times \emph{a} }}
+\label{simple_regression}
 \end{equation}
 
 \textsc{Pr}(\textsc{M+} ~$|$~ \emph{a}) measures the probability of the occurrence of Malaria if the variable \emph{a} is observed.
-Figure \ref{sigmoid_curve} represents the corresponding logistic function \emph{f(a)}. Recall that the main interest of this function
+Figure \ref{sigmoid_curve} represents the corresponding logistic function \emph{f(a)}. Again, the main interest of this function
 lies in the simplicity of reaching an estimation of an odds ratio (OR) which measures the strength of the association between the 
-disease \textsc{M} and an exposure variable.
+disease \textsc{M} and an exposure variable in a regression analysis. Indeed if the value exposure variable is either $0$ (the variable is not observed)
+or $1$ (the variable is observed) as in our setting, the model enables to obtain after some simplifications OR = $e^{\beta}$. The coefficient $\beta$ 
+of the exposure variable in the logistic model is then the logarithmic of the odds ratio which measures the relationship between the explanatory variable 
+(sign or symptom) and the disease (Malaria); this eases the analysis of the results of the logistic regression. 
+
+An extension of the simple regression to a model with multiple variables (a.k.a multiple regression) is straightforward as we show with the formula below.
+
+\begin{equation}
+\textsc{Pr}(\textsc{M+} ~|~ \emph{$a_1$},\emph{$a_2$}, \ldots, \emph{$a_n$}) = \frac{e^{\alpha + \sum_{i=1}^{n} \beta_i \times \emph{$a_i$} }}{1 + e^{\alpha + \sum_{i=1}^{n} \beta_i \times \emph{$a_i$} }}
+\label{multiple_regression}
+\end{equation} 
+where to every variable \emph{$a_i$} is associated a coefficient $\beta_i$. The corresponding odds ratio OR$_i$, quantifying the relationship between \emph{$a_i$} and \textsc{M+} is equal to $e^{\beta_i}$.
 
 % Selection of the final model
 \subsubsection{Selection of the final model.}  
