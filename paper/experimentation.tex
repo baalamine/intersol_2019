@@ -1,7 +1,28 @@
 \section{Experimentation and results}\label{experimentation}
-
+In this section, we present the performance of our prediction
+ model for Malaria occurrecne through an analysis of the results
+ of the experimentations we have conducted on real-world datasets
+and a semi-synthetic dataset. We start by presenting our experimentation setting.
+ 
 % Experimentation setting
 \subsection{Experimentation setting}
+We ran tests on three different datasets using the Python Implementation of the logistic regression function.
+To impute missing data, we have used the R package of the algorithm missForest.
+
+% Our datasets
+\subsubsection{Our datasets}
+We collected and used a real-world patient dataset and three of its variants. The description of the data preparation
+pipeline to clean, normalize and impute information in our raw  real-world dataset is given in Section \ref{data_prep}.
+
+The first variant of this real-world dataset is obtained by removing records with missing attributes. 
+The last variant is a semi-synthetic dataset which has been set up by sampling over our real-world 
+dataset. Indeed when we have performed some explanatory analysis on the real-world dataset we have 
+observed the dataset was not balanced.
+
+% Implementation of the logistic model
+\subsubsection{Implementation of the logistic model}
+
+
 
 % Performance measures
 \subsection{Performance measures}
