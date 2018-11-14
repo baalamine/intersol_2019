@@ -11,13 +11,31 @@ To impute missing data, we have used the R package of the algorithm missForest.
 
 % Our datasets
 \subsubsection{Our datasets}
-We collected and used a real-world patient dataset and three of its variants. The description of the data preparation
-pipeline to clean, normalize and impute information in our raw  real-world dataset is given in Section \ref{data_prep}.
+We collected and used a real-world patient dataset from the different health points which were set during the Grand Magal of Touba in 2016.
+We also generated and used two variants of this real-world dataset. The description of the characteristics of our raw real-world dataset, as well as the  data preparation
+pipeline that we have proposed in order to clean, normalize and impute information, are given in Section \ref{data_prep}; we refer to this cleaned and complete real-world
+patient dataset by \textsc{DT1}. 
 
-The first variant of this real-world dataset is obtained by removing records with missing attributes. 
-The last variant is a semi-synthetic dataset which has been set up by sampling over our real-world 
-dataset. Indeed when we have performed some explanatory analysis on the real-world dataset we have 
-observed the dataset was not balanced.
+We generated the first variant, denoted by \textsc{DT2}, of the raw real-world patient dataset by 
+removing records with missing attributes, instead of using an imputation algorithm that will predicts 
+values for missing information. Such a variant will help to study the impact of removing records with 
+missing values in the prediction accuracy.
+ 
+The second variant, called \textsc{DT3}, is a semi-synthetic dataset which has been set up by using a 
+sampling strategy over our raw real-world dataset. Indeed when we have performed some explanatory analysis 
+on the real-world dataset have been revealed that the dataset was not balanced, i.e. it shows strong between
+class imbalance; the amount of records about patients suffering from Malaria was largely less than the number
+of patients that do not suffer from Malaria as shown in Figure \ref{records_class}. Harnessing sampling approaches may enbale to obtain a balanced 
+semi-dataset regarding the two classes to predict. To solve our problem of imbalanced dataset, we used the 
+algorithm SMOTE \cite{Wa06}, which is a synthetic minority oversampling technique, through its Python implementation
+in the  package \emph{imbalanced-learn} \cite{Gu17}. We have applied an over-sampling on the minority class into our patient 
+dataset in order to obtain a semi-synthetic dataset \textsc{DT3} containing the same number of records for both classes.  
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{images/imbalanced_dataset}
+\label{records_class}\caption{The number of records by class}
+\end{figure} 
 
 % Implementation of the logistic model
 \subsubsection{Implementation of the logistic model}
@@ -33,5 +51,5 @@ An important distinction is between metrics that are independent on the prevalen
 prevalence – both types are useful, but they have very different properties.
 
 % Analysis of the results
-\subsection{Analysis of the results}
+\subsection{Experiments and analysis of the results}
 
