@@ -75,16 +75,19 @@ As the logistic regression performs a supervised learning we have used 60\% for 
 % Performance measures
 \subsection{Performance measures}
 To evaluate the performance of our prediction approach over the different used datasets, we have computed the precision,
-recall, F-measure, sensitivity and specificity of the predicted classes. We have also drawn the graph of the Receiver operating 
+recall (or sensitivity), F-measure, and specificity of the predicted classes. We have also drawn the graph of the Receiver operating 
 characteristic of the logistic regression to study its shape.  
-The sensitivity and specificity are often used in the medecine domain as performance measures for prediction tasks.
+The sensitivity, specificity and ROC plot are often used in the medecine domain as performance measures for prediction tasks.
 
 \subsubsection{Precision.}
 \subsubsection{Recall.}
 \subsubsection{F-measure.}
 \subsubsection{Specificity.}
-\subsubsection{Sensitivity.}
-\subsubsection{Receiver operating characteristic.}
+\subsubsection{Receiver operating characteristic.} A receiver operating characteristic curve, i.e., ROC curve, is a graphical plot
+ that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied.
+The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings. The true-positive rate is also known as sensitivity, recall or probability of detection[1] in machine learning. The false-positive rate is also known as the fall-out or probability of false alarm[1] and can be calculated as (1 − specificity).
+
+
 % Analysis of the results
 \subsection{Experiments and analysis of the results}
 
