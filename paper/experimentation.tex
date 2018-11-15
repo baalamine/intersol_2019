@@ -133,14 +133,19 @@ or another with the result of the quick diagnostic test (or QDT for short) among
 then present a comparative analysis.
 
 \subsubsection{Experiments with DT1}
+Table 2 and Figure 3 respectively show the performance measures and the ROC curve of the results of the our classification approach tested on dataset 
+DT1 that is our cleaned real-world dpatient with imputed missing values. The results on Table 2a) and Figure 3a) are obtained without considering the 
+quick diagni-ostic test output in contrast of measures in Table 2b) and Figure 3b). One can easily see that the accuracy of our prediction model is 
+sensibly the same when considering or not the QDT; this accuracy is quite good as proven by the precision which is greater than 90\%.  
+
 % results for precision, recall, F-measure
-\begin{table}[h]
+\begin{table}[!h]
 \centering
 \subtable[Prediction without the QDT outcome]{
 \begin{tabular}{ccc}
 \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
 \toprule
-$0.97$ & $1.0$ & $10.99$ \\
+$0.97$ & $1.0$ & $0.99$ \\
 \bottomrule
 \end{tabular}
 }%
@@ -154,11 +159,11 @@ $0.98$ & $1.0$ & $0.99$ \\
 \bottomrule\\
 \end{tabular}
 }%
-\label{perf-measure-dt2}\caption{Performance measures of the prediction on DT1}
+\label{perf-measure-dt1}\caption{Performance measures of the prediction on DT1}
 \end{table}
 
 % the roc curve
-\begin{figure}
+\begin{figure}[!h]
 \centering
 \subfigure[Prediction without the QDT outcome]{
 \includegraphics[width=.4\textwidth]{images/curve_roc_dt1_1}
@@ -172,10 +177,14 @@ $0.98$ & $1.0$ & $0.99$ \\
 
 
 \subsubsection{Experiments with DT2}
+Table 3 and Figure 4 respectively show the performance measures and the ROC curve of the results (with or without taking into account the QDT) 
+of the our classification approach tested on dataset DT2 that is our cleaned real-world patient with the deletion of records have missing data.
+One can easily see that the accuracy of our prediction model is sensibly the same when considering or not the QDT; this accuracy is quite good as proven by the precision which is greater than 90\%.
+
 
 
 % results for precision, recall, F-measure
-\begin{table}[h]
+\begin{table}[!h]
 \centering
 \subtable[Prediction without the QDT outcome]{
 \begin{tabular}{ccc}
@@ -192,14 +201,14 @@ $0.75$ & $1.0$ & $10.86$ \\
 \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
 \toprule
 $1.0$ & $1.0$ & $1.0$ \\
-\bottomrule\\
+\bottomrule
 \end{tabular}
 }%
 \label{perf-measure-dt2}\caption{Performance measures of the prediction on DT2}
 \end{table}
 
 % the roc curve
-\begin{figure}
+\begin{figure}[!h]
 \centering
 \subfigure[Prediction without the QDT outcome]{
 \includegraphics[width=.42\textwidth]{images/curve_roc_dt2_1}
@@ -209,5 +218,43 @@ $1.0$ & $1.0$ & $1.0$ \\
 }
 \caption{The curve of the Receiver Operating Characteristic for prediction on DT2}\label{curve_roc_dt2}
 \end{figure}
+
 \subsubsection{Experiments with DT3}
+
+% results for precision, recall, F-measure
+\begin{table}[!h]
+\centering
+\subtable[Prediction without the QDT outcome]{
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.77$ & $0.82$ & $0.79$ \\
+\bottomrule\\
+\end{tabular}
+}%
+\hspace*{0.5cm}
+\subtable[Prediction with the QDT outcome]{
+\centering
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.87$ & $0.90$ & $0.89$ \\
+\bottomrule
+\end{tabular}
+}%
+\label{perf-measure-dt3}\caption{Performance measures of the prediction on DT3}
+\end{table}
+
+% the roc curve
+\begin{figure}[!h]
+\centering
+\subfigure[Prediction without the QDT outcome]{
+\includegraphics[width=.42\textwidth]{images/curve_roc_dt3_1}
+}%
+\subfigure[Prediction with the QDT outcome]{
+\includegraphics[width=.4\textwidth]{images/curve_roc_dt3_2}
+}
+\caption{The curve of the Receiver Operating Characteristic for prediction on DT3}\label{curve_roc_dt3}
+\end{figure}
+
 \subsubsection{Comparative analysis of the results}
