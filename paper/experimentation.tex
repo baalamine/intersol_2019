@@ -49,18 +49,22 @@ classification using the best final model. For the purposes of our tests, we hav
 
 % input parameters
 \begin{itemize}
-\item \textbf{random\_state}:
+\item \textbf{random\_state}: it models the seed of the pseudo random number generator to use when shuffling the data. Its value
+is set to $0$ as we do not need to shuffle data in our experimentations.
 \item \textbf{class\_weight}:
-\item \textbf{dual}:
+\item \textbf{dual}: Dual or primal formulation. Dual formulation is only implemented for l2 penalty with liblinear solver.
+This parameter is set to \emph{False} as the number of samples is greater than the number of features.
 \item \textbf{intercept\_scaling}:
 \item \textbf{max\_iter}:
 \item \textbf{multi\_class}:
 \item \textbf{n\_jobs}:
-\item \textbf{penalty}:
-\item \textbf{solver}:
-\item \textbf{tol:}
+\item \textbf{penalty}: this parameter is used to specify the norm in the pernalization. We fixed the penality to its default value $l2$.
+\item \textbf{solver}: it enables to specify the strategy used to solve the optimization underlying our model. For the solver we fix it 
+to \emph{liblinear}.
+\item \textbf{tol:} tolerance for stopping criteria which is set to $0.0001$.
 \item \textbf{verbose}:
-\item \textbf{warm\_start}:
+\item \textbf{warm\_start}: when set to True, reuse the solution of the previous call to fit as initialization, otherwise, just erase the
+ previous solution. Useless for liblinear solver.
 \end{itemize}
 
 As the logistic regression performs a supervised learning we have used 60\% for the training set and 30\% for the test set.
