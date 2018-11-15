@@ -118,7 +118,9 @@ F_1 = 2 \times \frac{p\times r}{p + r}
 \label{f-measure}
 \end{equation}
  
-\subsubsection{Specificity.}
+\subsubsection{Specificity.} The specificity, also known as the true negative rate, measures the proportion of actual negatives that are correctly identified as such 
+(e.g., the percentage of people not suffering from Malaria  who are correctly identified as not having the condition).
+
 \subsubsection{Receiver operating characteristic.} A receiver operating characteristic, or ROC in short, is a graph
  that shows the diagnostic ability of a binary classifier system as its discrimination threshold is varied.
 The ROC curve is created by plotting the \emph{true positive rate} (i.e. sensitivity or recall in machine learning) 
@@ -136,13 +138,19 @@ against the false positive rate (1 - specifity) at various threshold settings.
 \begin{table}[h]
 \centering
 \begin{tabular}{ccc}
-Precision & Recall & F-measure\\
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$1.0$ & $1.0$ & $1.0$ \\
+\bottomrule
 \end{tabular}
+\caption{Performance measures of the predction on DT2}\label{perf-measures-dt2}
 \end{table}
 
 % the roc curve
 \begin{figure}
-\includegraphics[width=.8\textwidth]{images/curve_roc_dt2}
+\centering
+\includegraphics[width=.6\textwidth]{images/curve_roc_dt2}
+\caption{The curve of the Receiver Operating Character with DT2}\label{roc_dt2}
 \end{figure}
 \subsubsection{Experiments with DT3}
 \subsubsection{Comparative analysis of the results}
