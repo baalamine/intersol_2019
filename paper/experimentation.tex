@@ -74,17 +74,36 @@ As the logistic regression performs a supervised learning we have used 60\% for 
 
 % Performance measures
 \subsection{Performance measures}
-In medecine, \emph{sensitivity} and \emph{specificity} are often used, 
-while in information retrieval \emph{precision} and \emph{recall} are preferred.
-An important distinction is between metrics that are independent on the prevalence
-(how often each category occurs in the population), and metrics that depend on the
-prevalence – both types are useful, but they have very different properties.
+To evaluate the performance of our prediction approach over the different used datasets, we have computed the precision,
+recall, F-measure, sensitivity and specificity of the predicted classes. We have also drawn the graph of the Receiver operating 
+characteristic of the logistic regression to study its shape.  
+The sensitivity and specificity are often used in the medecine domain as performance measures for prediction tasks.
 
+\subsubsection{Precision.}
+\subsubsection{Recall.}
+\subsubsection{F-measure.}
+\subsubsection{Specificity.}
+\subsubsection{Sensitivity.}
+\subsubsection{Receiver operating characteristic.}
 % Analysis of the results
 \subsection{Experiments and analysis of the results}
 
 
 \subsubsection{Experiments with DT1}
 \subsubsection{Experiments with DT2}
+
+
+% results for precision, recall, f1-score
+\begin{table}[h]
+\centering
+\begin{tabular}{cccc}
+Precision & Recall & F-measure & \\
+\end{tabular}
+\end{table}
+
+% the roc curve
+\begin{figure}
+\includegraphics[width=.8\textwidth]{images/curve_roc_dt2}
+\end{figure}
 \subsubsection{Experiments with DT3}
 \subsubsection{Comparative analysis of the results}
