@@ -28,8 +28,11 @@ class imbalance; the amount of records about patients suffering from Malaria was
 of patients that do not suffer from Malaria as shown in Figure \ref{records_class}. Harnessing sampling approaches may enbale to obtain a balanced 
 semi-dataset regarding the two classes to predict. To solve our problem of imbalanced dataset, we used the 
 algorithm SMOTE \cite{Wa06}, which is a synthetic minority oversampling technique, through its Python implementation
-in the  package \emph{imbalanced-learn} \cite{Gu17}. We have applied an over-sampling on the minority class into our patient 
-dataset in order to obtain a semi-synthetic dataset \textsc{DT3} containing the same number of records for both classes.  
+in the  package \emph{imbalanced-learn} \cite{Gu17}. SMOTE consists of predicting a sample of synthetic dataset based on 
+the value of the minority class of the targeted class (here the attribute Diagnostic). It randomly chooses the k-nearest 
+neighbours of a given record in order to randomly create new observations.
+ We have applied an over-sampling of the minority class into our patient 
+dataset for generating  a semi-synthetic dataset \textsc{DT3} containing the same number of records for both classes.  
 
 % distribution of records by class
 \begin{figure}[h]
@@ -40,7 +43,7 @@ dataset in order to obtain a semi-synthetic dataset \textsc{DT3} containing the 
 
 % Implementation of the logistic model
 \subsubsection{Prediction model setting.}
-In order to set up our logistic regression-based classification model, we rely on the implementation of the logistic regression in Python \footnote{}.
+In order to set up our logistic regression-based classification model, we rely on the Python implementation of the logistic regression in the \emph{sklearn} library\footnote{https://scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LogisticRegression.html}.
 This python package defines the logistic regression with the required input parameters, as well as optimization strategies, to properly perform binary 
 classification using the best final model. For the purposes of our tests, we have used the following input parameters of the logistic regression:
 
@@ -73,3 +76,8 @@ prevalence – both types are useful, but they have very different properties.
 % Analysis of the results
 \subsection{Experiments and analysis of the results}
 
+
+\subsubsection{Experiments with DT\_1}
+\subsubsection{Experiments with DT\_2}
+\subsubsection{Experiments with DT\_3}
+\subsubsection{Comparative analysis of the results}
