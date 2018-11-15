@@ -10,7 +10,7 @@ We ran tests on three different datasets using the Python Implementation of the 
 To impute missing data, we have used the R package of the algorithm missForest.
 
 % Our datasets
-\subsubsection{Our datasets}
+\subsubsection{Our datasets.}
 We collected and used a real-world patient dataset from the different health points which were set during the Grand Magal of Touba in 2016.
 We also generated and used two variants of this real-world dataset. The description of the characteristics of our raw real-world dataset, as well as the  data preparation
 pipeline that we have proposed in order to clean, normalize and impute information, are given in Section \ref{data_prep}; we refer to this cleaned and complete real-world
@@ -31,6 +31,7 @@ algorithm SMOTE \cite{Wa06}, which is a synthetic minority oversampling techniqu
 in the  package \emph{imbalanced-learn} \cite{Gu17}. We have applied an over-sampling on the minority class into our patient 
 dataset in order to obtain a semi-synthetic dataset \textsc{DT3} containing the same number of records for both classes.  
 
+% distribution of records by class
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{images/imbalanced_dataset}
@@ -38,9 +39,28 @@ dataset in order to obtain a semi-synthetic dataset \textsc{DT3} containing the 
 \end{figure} 
 
 % Implementation of the logistic model
-\subsubsection{Implementation of the logistic model}
+\subsubsection{Prediction model setting.}
+In order to set up our logistic regression-based classification model, we rely on the implementation of the logistic regression in Python \footnote{}.
+This python package defines the logistic regression with the required input parameters, as well as optimization strategies, to properly perform binary 
+classification using the best final model. For the purposes of our tests, we have used the following input parameters of the logistic regression:
 
+% input parameters
+\begin{itemize}
+\item \textbf{random\_state}:
+\item \textbf{class\_weight}:
+\item \textbf{dual}:
+\item \textbf{intercept\_scaling}:
+\item \textbf{max\_iter}:
+\item \textbf{multi\_class}:
+\item \textbf{n\_jobs}:
+\item \textbf{penalty}:
+\item \textbf{solver}:
+\item \textbf{tol:}
+\item \textbf{verbose}:
+\item \textbf{warm\_start}:
+\end{itemize}
 
+As the logistic regression performs a supervised learning we have used 60\% for the training set and 30\% for the test set.
 
 % Performance measures
 \subsection{Performance measures}
