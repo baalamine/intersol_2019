@@ -81,7 +81,16 @@ The sensitivity, specificity and ROC plot are often used in the medecine domain 
 
 \subsubsection{Precision.}
 \subsubsection{Recall.}
-\subsubsection{F-measure.}
+\subsubsection{F-measure.} The F-measure, denoted by F$_1$ is a metric that measures the accuracy of a test in statistical analysis of a binary classification.
+It is computed using both the precision $p$ and the recall $r$ of the test as the ratio of the number of correct positive results and the
+number of all positive results returned by the classifier. 
+
+% F-measure formula
+\begin{equation}
+F_1 = 2 \times \frac{p\times r}{p + r}
+\label{f-measure}
+\end{equation}
+ 
 \subsubsection{Specificity.}
 \subsubsection{Receiver operating characteristic.} A receiver operating characteristic, or ROC in short, is a graph
  that shows the diagnostic ability of a binary classifier system as its discrimination threshold is varied.
