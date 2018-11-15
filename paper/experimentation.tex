@@ -80,8 +80,35 @@ characteristic of the logistic regression to study its shape.
 The sensitivity, specificity and ROC plot are often used in the medecine domain as performance measures for prediction tasks.
 
 \subsubsection{Precision.}
+
+\label{precision} The precision $p$, or positive value rate, for a class is the number
+ of true positives (i.e. the number of cases  correctly labeled as belonging to the class \textsc{M+})
+ divided by the total number of cases labeled as belonging to the class \textsc{M+} (i.e. the sum of true positives 
+and false positives, which are cases  incorrectly labeled as belonging to the class).
+
+
+% precision formula
+\begin{equation}
+p=\frac{\sum_{i=1}^{|R|}Entity(i)}{R}.
+\end{equation}
+
+\textit{Entity(i)} is a binary function that returns true if the predicted class for the  \textit{i}-th case is correct (w.r.t test set) and false otherwise.
+$R$ is the sum of the number of predicted true positive and  false positive cases.
+
 \subsubsection{Recall.}
-\subsubsection{F-measure.} The F-measure, denoted by F$_1$ is a metric that measures the accuracy of a test in statistical analysis of a binary classification.
+The recall $r$ (also known as sensitivity) is defined as the number of true positives divided by the total number of cases that actually belong
+ to the clss \textsc{M+} (i.e. the sum of true positives and false negatives, which are cases which were not labeled as belonging to the class 
+\textsc{M+} but should have been).
+
+% Recall formula
+\begin{equation}
+r=\frac{\sum_{i=1}^{\mid R\mid}Entity(i)}{G}
+\label{recall}
+\end{equation}
+
+$G$ is the sum of the number of predicted true positive and false negative cases.
+
+\subsubsection{F-measure.} The F-measure, denoted by F$_1$, is a metric that measures the accuracy of a test in statistical analysis of a binary classification.
 It is computed using both the precision $p$ and the recall $r$ of the test as the ratio of the number of correct positive results and the
 number of all positive results returned by the classifier. 
 
@@ -105,11 +132,11 @@ against the false positive rate (1 - specifity) at various threshold settings.
 \subsubsection{Experiments with DT2}
 
 
-% results for precision, recall, f1-score
+% results for precision, recall, F-measure
 \begin{table}[h]
 \centering
-\begin{tabular}{cccc}
-Precision & Recall & F-measure & \\
+\begin{tabular}{ccc}
+Precision & Recall & F-measure\\
 \end{tabular}
 \end{table}
 
