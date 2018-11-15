@@ -128,29 +128,86 @@ against the false positive rate (1 - specifity) at various threshold settings.
 
 % Analysis of the results
 \subsection{Experiments and analysis of the results}
-
+For each given dataset, we have performed two kinds of tests with our prediction model: a test without including the outcome of the quick diagnostic test
+or another with the result of the quick diagnostic test (or QDT for short) among the input features. We first describe below the obtained results for each dataset and
+then present a comparative analysis.
 
 \subsubsection{Experiments with DT1}
+% results for precision, recall, F-measure
+\begin{table}[h]
+\centering
+\subtable[Prediction without the QDT outcome]{
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.97$ & $1.0$ & $10.99$ \\
+\bottomrule
+\end{tabular}
+}%
+\hspace*{0.5cm}
+\subtable[Prediction with the QDT outcome]{
+\centering
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.98$ & $1.0$ & $0.99$ \\
+\bottomrule\\
+\end{tabular}
+}%
+\label{perf-measure-dt2}\caption{Performance measures of the prediction on DT1}
+\end{table}
+
+% the roc curve
+\begin{figure}
+\centering
+\subfigure[Prediction without the QDT outcome]{
+\includegraphics[width=.4\textwidth]{images/curve_roc_dt1_1}
+}%
+\subfigure[Prediction with the QDT outcome]{
+\includegraphics[width=.47\textwidth]{images/curve_roc_dt1_2}
+}
+\caption{The curve of the Receiver Operating Characteristic for prediction on DT1}\label{curve_roc_dt1}
+\end{figure}
+
+
+
 \subsubsection{Experiments with DT2}
 
 
 % results for precision, recall, F-measure
 \begin{table}[h]
 \centering
+\subtable[Prediction without the QDT outcome]{
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.75$ & $1.0$ & $10.86$ \\
+\bottomrule\\
+\end{tabular}
+}%
+\hspace*{0.5cm}
+\subtable[Prediction with the QDT outcome]{
+\centering
 \begin{tabular}{ccc}
 \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
 \toprule
 $1.0$ & $1.0$ & $1.0$ \\
-\bottomrule
+\bottomrule\\
 \end{tabular}
-\caption{Performance measures of the predction on DT2}\label{perf-measures-dt2}
+}%
+\label{perf-measure-dt2}\caption{Performance measures of the prediction on DT2}
 \end{table}
 
 % the roc curve
 \begin{figure}
 \centering
-\includegraphics[width=.6\textwidth]{images/curve_roc_dt2}
-\caption{The curve of the Receiver Operating Character with DT2}\label{roc_dt2}
+\subfigure[Prediction without the QDT outcome]{
+\includegraphics[width=.42\textwidth]{images/curve_roc_dt2_1}
+}%
+\subfigure[Prediction with the QDT outcome]{
+\includegraphics[width=.4\textwidth]{images/curve_roc_dt2_2}
+}
+\caption{The curve of the Receiver Operating Characteristic for prediction on DT2}\label{curve_roc_dt2}
 \end{figure}
 \subsubsection{Experiments with DT3}
 \subsubsection{Comparative analysis of the results}
