@@ -132,7 +132,7 @@ For each given dataset, we have performed two kinds of tests with our prediction
 or another with the result of the quick diagnostic test (or QDT for short) among the input features. We first describe below the obtained results for each dataset and
 then present a comparative analysis.
 
-\subsubsection{Experiments with DT1}
+\subsubsection{Experiments with DT1.}
 Table 2 and Figure 3 respectively show the performance measures and the ROC curve of the results of the our classification approach tested on dataset 
 DT1 that is our cleaned real-world dpatient with imputed missing values. The results on Table 2a) and Figure 3a) are obtained without considering the 
 quick diagni-ostic test output in contrast of measures in Table 2b) and Figure 3b). One can easily see that the accuracy of our prediction model is 
@@ -176,10 +176,11 @@ $0.98$ & $1.0$ & $0.99$ \\
 
 
 
-\subsubsection{Experiments with DT2}
+\subsubsection{Experiments with DT2.}
 Table 3 and Figure 4 respectively show the performance measures and the ROC curve of the results (with or without taking into account the QDT) 
 of the our classification approach tested on dataset DT2 that is our cleaned real-world patient with the deletion of records have missing data.
-One can easily see that the accuracy of our prediction model is sensibly the same when considering or not the QDT; this accuracy is quite good as proven by the precision which is greater than 90\%.
+The accuracy measures on Table 3a) et Figure 4) respectively compare to those in Table 3b) and Figure 4b) show that our classifier does well 
+when considering the QDT as a feature; without the QDT the precision of the prediction decreases a lot. 
 
 
 
@@ -190,7 +191,7 @@ One can easily see that the accuracy of our prediction model is sensibly the sam
 \begin{tabular}{ccc}
 \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
 \toprule
-$0.75$ & $1.0$ & $10.86$ \\
+$0.75$ & $1.0$ & $0.86$ \\
 \bottomrule\\
 \end{tabular}
 }%
@@ -219,7 +220,8 @@ $1.0$ & $1.0$ & $1.0$ \\
 \caption{The curve of the Receiver Operating Characteristic for prediction on DT2}\label{curve_roc_dt2}
 \end{figure}
 
-\subsubsection{Experiments with DT3}
+\subsubsection{Experiments with DT3.}
+similarly to results on DT2, performance measures on DT3 show a better prediction accuracy (See Table 4 and Figure 5) when the QDT is considered as a feature.  
 
 % results for precision, recall, F-measure
 \begin{table}[!h]
@@ -257,4 +259,9 @@ $0.87$ & $0.90$ & $0.89$ \\
 \caption{The curve of the Receiver Operating Characteristic for prediction on DT3}\label{curve_roc_dt3}
 \end{figure}
 
-\subsubsection{Comparative analysis of the results}
+\subsubsection{Comparative analysis of the results.}
+In sum, the first experimentations detailed above prove that our logistic regression based prediction model does well in general and in particular when the outcome 
+of the quick diagnostic test is considered as a feature for the learning process. More specifically, the precision of our prediction is greater than 90\% for datasets DT1 and DT2,
+reaching 100\% for DT1. For the specific case of the real-world patient dataset with missing data filled using an imputation algorithm this accuracy does not decrease even though the QDT
+is not considered during the prediction process, and only the Malaria features, i.e. signs and symptoms are taken into account. As a result, we can conlcude that there is a hope to 
+construct an efficient prediction model for Malaria without the need to perform the quick diagnostic test in order to declare a given patent he is affected by the disease. 
