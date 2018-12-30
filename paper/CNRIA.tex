@@ -1,1 +1,87 @@
+% Ceci est samplepaper.tex, un exemple de chapitre présentant le
+% Paquet macro LLNCS pour les procédures Springer Computer Science;
+% Version 2.20 du 2017/10/04
+%
+\ documentclass [runheads] {llncs}
+%
+\ usepackage {graphicx}
+\ usepackage {hyperref}
+\ renewcommand \ UrlFont { \ color {blue} \ rmfamily }
+\ setlength { \ parskip } {0pt}
+\ raggedbottom
 
+\ usepackage {amsmath}
+\ usepackage {csquotes}
+\ usepackage {paralist}
+\ usepackage {booktabs}
+\ usepackage {mathptmx}
+\ usepackage {pgfplots}
+\ pgfplotsset {compat = 1.8}
+\ usepackage {subfigure}
+
+\ begin {document}
+%
+\ title {Vers un modèle de prévision efficace \\ des cas de paludisme au Sénégal}
+%
+% \ titlerunning {titre abrégé de l'article}
+% Si le titre du document est trop long pour le titre courant, vous pouvez définir
+% un titre abrégé ici
+%
+\ author {Ousseynou Mbaye \ et Mouhamadou Lamine Ba \\ Gaoussou Camara \ et Alassane Sy}
+%
+\ authorrunning {Ousseynou Mbaye \ et M. Lamine Ba \ et Gaoussou Camara \ et Alassane Sy}
+% Les prénoms sont abrégés dans la tête de liste.
+% S'il y a plus de deux auteurs, 'et al.' est utilisé.
+%
+\ institute {Universit \ ' e Alioune Diop de Bambey, Bambey, Sénégal \\
+\ email {firstmidlle.last@uadb.edu.sn}
+% \ email {ousseynou.mbaye@uadb.edu.sn} \\
+% \ email {mouhamadoulamine.ba@uadb.edu.sn} \\
+% \ email {gaoussou.camara@uadb.edu.sn} \\
+% \ email {alassane.sy@uadb.edu.sn}
+}
+%
+\ maketitle               % compose l'en-tête de la contribution
+%
+\ begin {abstract}
+Parmi les maladies les plus meurtrières au monde, le paludisme reste un véritable fléau en Afrique subsaharienne 
+en particulier. Dans des pays comme le Sénégal, une telle situation est grave en raison du manque de qualité
+des services de santé et un personnel bien formé, capable d’effectuer un diagnostic précis des maladies dont souffrent les patients. 
+Cela appelle la nécessité de trouver des outils automatisés pour aider les acteurs médicaux dans leur processus de prise de décision.
+Dans cet article, nous présentons les premiers pas vers un moyen efficace de diagnostiquer automatiquement l’apparition ou non du paludisme. 
+sur la base des signes et des symptômes du patient et des résultats du test de diagnostic rapide. Notre approche de prédiction est construite
+sur la fonction de régression logistique. Premiers utilisateurs d'un jeu de données patient réel, ainsi qu'un jeu de données semi-synthétique,
+montrer des résultats de performance prometteurs quant à l'efficacité de l'approche proposée.
+ 
+\ keywords {Paludisme   \ et Diagnostic \ et imputation de données \ et modèle de prévision.}
+\ end {abstract}
+%
+%
+% Introduction
+\ input {intro}
+
+% Travaux connexes
+\ input {related_work}
+
+% Préparation des données
+\ input {préparation_données}
+
+Modèle de prévision %
+\ input {prediction_model}
+
+% D' expérimentation et de résultats
+\ input {expérimentation}
+
+% Conclusion
+\ input {conclusion}
+
+%
+% ---- Bibliographie ----
+%
+Les utilisateurs de % BibTeX doivent spécifier le style de bibliographie 'splncs04'.
+Les références en % seront alors triées et formatées dans le style approprié.
+%
+\ bibliographystyle {splncs04}
+\ bibliography {biblio}
+%
+\ end {document}
