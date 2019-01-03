@@ -46,6 +46,28 @@ La régression logistique est une méthode statistique pour effectuer des classi
 
 La régression logistique est un des modèles multivariables couramment utilisé en épidémiologie \cite{Am02,Pr05}  (c’est-à-dire l’étude de l’incidence, de la distribution et du contrôle possible des maladies et d’autres facteurs liés à des problèmes de santé pouvant affecter des groupes de population). Dans un tel contexte la variable dépendante est habituellement la survenue ou non d'un événement (maladie ou autre) et les variables indépendantes sont celles susceptibles d'influencer la survenue de cet événement c'est-à-dire les variables mesurant l'exposition à un facteur de risque ou à un facteur protecteur, ou variable représentant un facteur de confusion. L'intérêt majeur de cette technique est de quantifier la force de l'association entre chaque variable indépendante et la variable dépendante, en tenant compte de l'effet des autres variables intégrées dans le modèle \cite{Am02} .
 
+\subsubsection{Définition fonctionnelle de notre modèle de régression.}
+On supposera que la variable  \textsc{Y} à laquelle on s'intéresse est la survenue ou non du paludisme, dont les deux catégories seront notées \textsc{M+} et \textsc{M-}.
+Dans le cas particulier d'une seule variable \emph{a} explicative (équivalent d'une régression simple), le modèle s'écrit :
+\begin{equation}
+\textsc{Pr}(\textsc{M+} ~|~ \emph{a}) = \frac{e^{\alpha + \beta\times \emph{a} }}{1 + e^{\alpha + \beta\times \emph{a} }}
+\label{simple_regression}
+\end{equation}
+où les coefficients $\alpha$ et $\beta$ sont les paramètres du modèle.
+\textsc{Pr}(\textsc{M+} ~$|$~ \emph{a})mesure la probabilité d’apparition du paludisme si la variable \emph{a} est observé. La figure \ref{courbe de la fonction sigmoide} représente la fonction logistique correspondante \emph{f(a)}. Encore une fois, l’intérêt principal de cette fonction réside dans la simplicité d’atteindre une estimation des odd ratio (OR) qui mesure la force de l'association entre la maladie \textsc{M} et une variable d'exposition dans une analyse de régression. En effet, si l'exposition est codée en $0$ (la variable n’est pas observée) et$1$ (la variable est observée) comme dans notre cas, le modèle permet d'arriver après simplification à           OR = $e^{\beta}$. Le coefficient $\beta$ de la variable d'exposition dans le modèle logistique est donc le logarithme de l'odds-ratio mesurant l'association entre cette variable (signe ou symptôme) et la maladie (paludisme), ce qui permet d'interpréter facilement les résultats d'une régression logistique.
+L'extension vers un modèle à plusieurs variables (régression multiple) se fait très simplement comme le montre la formule ci-dessous
+\begin{equation}
+\textsc{Pr}(\textsc{M+} ~|~ \emph{$a_1$},\emph{$a_2$}, \ldots, \emph{$a_n$}) = \frac{e^{\alpha + \sum_{i=1}^{n} \beta_i \times \emph{$a_i$} }}{1 + e^{\alpha + \sum_{i=1}^{n} \beta_i \times \emph{$a_i$} }}
+\label{multiple_regression}
+\end{equation} 
+À chaque variable\emph{$a_i$} est associé un coefficient $\beta_i$ et OR$_i$ (mesurant l'association entre Xi et M+) se calcule par  $e^{\beta_i}$.
+\subsubsection{Optimisation du modèle.}La question qui se pose généralement lorsqu’on utilise une régression multiple consiste à savoir comment sélectionner l’ensemble minimal de variables parmi les \emph{$a_i$} qui explique mieux la variable \textsc{Y}. Plusieurs stratégies d’optimisation sont possibles pour obtenir le meilleur modèle de prédiction finale qui prend en compte le maximum d'informations tout en restreignant autant que possible le nombre de variables explicatives afin de faciliter l'analyse des résultats. Les plus employées sont les  procédures dites \emph{pas à pas descendantes} ou \emph{pas à pas ascendantes}. Les deux approches appliquent une régression itérative en incluant d’abord dans le modèle la variable qui présente le meilleur coefficient de détermination, puis en ajoutant la variable qui améliore ce coefficient et ainsi de suite pour les méthodes ou pas à pas ascendantes. Pour les méthodes ou pas à pas descendantes, l’ensemble des variables est considéré au début et les variables sont progressivement exclus du modèle, en fonction de ceux qui n’ont pas significativement amélioré le coefficient de détermination.
+Dans la section suivante nous présentons les résultats de nos expérimentations obtenues en utilisant notre modèle de régression logistique sur des données réelles de patients
+
+
+
+
+
 
 
 
