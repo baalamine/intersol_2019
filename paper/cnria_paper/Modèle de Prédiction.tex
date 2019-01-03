@@ -1,2 +1,15 @@
+\section{Modèle de Prédiction}\label{Modèle de Prédiction}
+Pour prédire le paludisme à partir du jeu de données labélisé obtenue étant donné un nouveau patient, nous utilisons la régression logistique comme \emph{prédicteur}. Dans cette section, nous rappelons brièvement les bases de la fonction de régression logistique. Puisque notre problème est un problème de classification binaire, nous commençons par introduire le problème de classification binaire que nous devons résoudre dans l'étude.
+\subsection{Classification Binaire}
+Supposons deux classes de diagnostic du paludisme: le \emph{paludisme} et le \emph{non-paludisme}. Nous considérons également \textsc{P} et \textsc{C} comme l’ensemble des patients et un modèle de prédiction. Un patient dans \emph{p} in \textsc{P} est défini par un ensemble de paires $(a_1, v_1), (a_2, v_2), \ldots, (a_n, v_n)$  $a_i$ et $v_i$, pour chaque $1\leq i\leq n$, correspond respectivement à une caractéristique donnée du paludisme et à sa valeur numérique associée définie comme suit.
+        
+\begin{equation}
+v_i = \left\{
+\begin{array}{rl}
+1 &\text{if $a_i$ is observed} \\
+0 &\text{otherwise} \\
+\end{array}
+\right.
+\end{equation}
+\begin{definition}{(Our prediction problem)}
 
-Pour prédire le paludisme à partir du jeu de données labélisé obtenue étant donné un nouveau patient, nous utilisons de régression logistique prédicteur. Dans cette section, nous rappelons brièvement les bases de la fonction de régression logistique. Puisque notre problème est un problème de classification binaire, nous commençons par introduire le problème de classification binaire que nous devons résoudre dans l'étude.
