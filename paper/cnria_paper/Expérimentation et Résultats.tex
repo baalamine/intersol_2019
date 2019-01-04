@@ -36,4 +36,150 @@ Dossier donné afin de créer de nouvelles observations au hasard. Nous avons ap
 \item \textbf{warm\_start}: lorsqu'il est défini sur True, réutilise la solution de l'appel précédent pour l'adapter à l'initialisation, sinon, effacez la solution précédente. Inutile pour le liblinear solver.
 \end{itemize}
 Comme la régression logistique effectue un apprentissage supervisé, nous avons utilisé 60\%  du jeu de données pour l’entrainement du modèle et 30\%  du jeu de données  pour  de test.
+% Performance measures
+\subsection{Les Mesures de performance}
+Pour évaluer la performance de notre modèle de prédiction sur les différents jeux de données utilisés, nous avons calculé la précision, le rappel (ou la sensibilité), 
+la F-mesure et la spécificité des classes prédites. Nous avons également tracer la courbe ROC (Receiver operating Chacacteristic) de la régression logistique pour étudier sa forme. La sensibilité, la spécificité et la courbe ROC sont souvent utilisés dans le domaine de la médecine en tant que mesure de la performance  pour l’évaluation des modèles de prédiction.
+\subsubsection{Precision.}
+\label{precision} . La précision p, ou taux de valeur positive, pour une classe est le nombre de vrais positifs (c’est-à-dire le nombre de cas correctement étiquetés comme appartenant à la classe \textsc{M+}) divisés par le nombre total de cas étiquetées comme appartenant à la classe \textsc{M+} (c’est-à-dire la somme des positifs et faux positifs). Les faux positifs sont les cas qui prédit dans vraies alors qu’ils  sont faux.
+% precision formula
+\begin{equation}
+p=\frac{\sum_{i=1}^{|R|}Entity(i)}{R}.
+\end{equation}
+ 
+\textit{Entity(i)} est une fonction binaire qui renvoie true si la classe prédite pour le \textit{i}-ième cas est correct et false sinon. $R$ est la somme du nombre de vrai positifs et des faux positifs.
+Recall (Rappel). Le rappel r (également appelé sensibilité) est défini comme le nombre de vrais positifs divisé par le nombre total de cas qui appartiennent réellement à la classe M + (c’est-à-dire la somme des vrais positifs et faux négatifs, qui sont des cas qui n'ont pas été étiquetés comme appartenant à la classe M + mais aurait dû être)
+\subsubsection{Recall.}
+% Recall formula
+\begin{equation}
+r=\frac{\sum_{i=1}^{\mid R\mid}Entity(i)}{G}
+\label{recall}
+\end{equation}
+$G$est la somme du nombre de vrais positifs prédits et du nombre de faux négatifs prédits.
+\subsubsection{F-measure.}la F-measure notée F$_1$, est une métrique qui mesure la précision d'un test en analyse statistique d'une classification binaire. Il est calculé en utilisant à la fois la précision $p$ et le rappel $r$ du test en tant que rapport du nombre de réponses positives et le nombre de tous les résultats positifs renvoyés par le classificateur
+% F-measure formula
+\begin{equation}
+F_1 = 2 \times \frac{p\times r}{p + r}
+\label{f-measure}
+\end{equation}
+\subsubsection{Specificity.}(Spécificité). La spécificité, également connue sous le nom de taux négatif réel, mesure la proportion de réels négatifs correctement identifiés en tant que tels (par exemple, le pourcentage de personnes ne souffrant pas de paludisme et qui sont correctement identifiées comme n’ayant pas la maladie).
+\subsubsection{Receiver operating characteristic.}
+La courbe ROC montre la capacité de diagnostic d'un système de classificateur binaire dont le seuil de discrimination est varié. La courbe ROC est obtenu en traçant le graphe \emph{vrai positif} (par exemple, sensibilité ou rappel en apprentissage automatique) par rapport au taux de faux positifs (1- spécificité) à différents seuils.
+% Analysis of the results
+\subsection{Expériences et analyse des résultats}
+Pour chaque ensemble de données considéré, nous avons effectué deux types de tests avec notre modèle de prédiction: un test sans inclure le résultat du test de diagnostic rapide(TDR) et un autre test avec le résultat du test de diagnostic rapide (TDR) parmi les attributs d’entrée. Nous avons d'abord décrit ci-dessous les résultats obtenus pour chaque ensemble de données, puis présenté une analyse comparative
+\subsubsection{Expérience avec DT1.}
+Le tableau 2 et la figure 3 montrent respectivement les mesures de performance et la courbe ROC des résultats de notre approche de classification testée sur le jeu  de données DT1. Les résultats sur le tableau 2a) et la figure 3a) sont obtenus sans tenir compte du résultat de test diagnostic rapide(TDR) en contraste avec les mesures du tableau 2b) et de la figure 3b). On peut facilement voir que l'exactitude de notre modèle de prédiction est sensiblement la même lorsque l'on considère ou non le TDR; cette prédiction est assez bonne comme le prouve la précision supérieure à 90\%.
+% results for precision, recall, F-measure
+\begin{table}[!h]
+\centering
+\subtable[Prediction without the QDT outcome]{
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.97$ & $1.0$ & $0.99$ \\
+\bottomrule
+\end{tabular}
+}%
+\hspace*{0.5cm}
+\subtable[Prediction with the QDT outcome]{
+\centering
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.98$ & $1.0$ & $0.99$ \\
+\bottomrule\\
+\end{tabular}
+}%
+\label{perf-measure-dt1}\caption{Performance measures of the prediction on DT1}
+\end{table}
+% the roc curve
+\begin{figure}[!h]
+\centering
+\subfigure[Prediction without the QDT outcome]{
+\includegraphics[width=.4\textwidth]{images/curve_roc_dt1_1}
+}%
+\subfigure[Prediction with the QDT outcome]{
+\includegraphics[width=.47\textwidth]{images/curve_roc_dt1_2}
+}
+\caption{The curve of the Receiver Operating Characteristic for prediction on DT1}\label{curve_roc_dt1}
+\end{figure}
+\subsubsection{Expériences avec DT2.}
+Le tableau 3 et la figure 4 montrent respectivement les mesures de performance et la courbe ROC des résultats (avec ou sans prise en compte du TDR) de notre modèle de prédiction testée sur le jeu de données DT2. Les mesures de précision sur la table 3a) et la figure 4) respectivement à celles du tableau 3b) et de la figure 4b) montrent que notre classificateur réussit bien lorsque l'on considère le  TDR comme un attribut alors que sans le TDR la précision de la prédiction diminue.
+% results for precision, recall, F-measure
+\begin{table}[!h]
+\centering
+\subtable[Prediction without the QDT outcome]{
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.75$ & $1.0$ & $0.86$ \\
+\bottomrule\\
+\end{tabular}
+}%
+\hspace*{0.5cm}
+\subtable[Prediction with the QDT outcome]{
+\centering
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$1.0$ & $1.0$ & $1.0$ \\
+\bottomrule
+\end{tabular}
+}%
+\label{perf-measure-dt2}\caption{Performance measures of the prediction on DT2}
+\end{table}
+
+% the roc curve
+\begin{figure}[!h]
+\centering
+\subfigure[Prediction without the QDT outcome]{
+\includegraphics[width=.42\textwidth]{images/curve_roc_dt2_1}
+}%
+\subfigure[Prediction with the QDT outcome]{
+\includegraphics[width=.4\textwidth]{images/curve_roc_dt2_2}
+}
+\caption{The curve of the Receiver Operating Characteristic for prediction on DT2}\label{curve_roc_dt2}
+\end{figure}
+\subsubsection{Expériences avec DT3.}
+De manière similaire aux résultats sur DT2, les mesures de performance sur DT3 montre une meilleure précision de prédiction (voir le tableau 4 et la figure 5) lorsque le TDR est pris en compte comme un attribut
+% results for precision, recall, F-measure
+\begin{table}[!h]
+\centering
+\subtable[Prediction without the QDT outcome]{
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.77$ & $0.82$ & $0.79$ \\
+\bottomrule\\
+\end{tabular}
+}%
+\hspace*{0.5cm}
+\subtable[Prediction with the QDT outcome]{
+\centering
+\begin{tabular}{ccc}
+\textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\
+\toprule
+$0.87$ & $0.90$ & $0.89$ \\
+\bottomrule
+\end{tabular}
+}%
+\label{perf-measure-dt3}\caption{Performance measures of the prediction on DT3}
+\end{table}
+
+% the roc curve
+\begin{figure}[!h]
+\centering
+\subfigure[Prediction without the QDT outcome]{
+\includegraphics[width=.42\textwidth]{images/curve_roc_dt3_1}
+}%
+\subfigure[Prediction with the QDT outcome]{
+\includegraphics[width=.4\textwidth]{images/curve_roc_dt3_2}
+}
+\caption{The curve of the Receiver Operating Characteristic for prediction on DT3}\label{curve_roc_dt3}
+\end{figure}
+\subsubsection{Analyse comparative des résultats .}
+
+
+
 
